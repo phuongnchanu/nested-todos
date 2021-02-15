@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo List</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <section class="nested-todos" aria-labelledby="todos-label">
+    <div class="nested-todos__header">
+      <div class="nested-todos__container">
+        <h1 class="nested-todos__title" id="todos-label" tabindex="-1" data-todo-list-title>Todo List</h1>
+        <p class="nested-todos__subtitle">Get everything in control everyday</p>
+      </div>
+    </div>
+
+    <div class="nested-todos__form">
+      <div class="nested-todos__container">
+        <form class="nested-todos__form-el" data-todo-form>
+          <div class="nested-todos__form-wrapper">
+            <label class="nest-todos__form-label visually-hidden" for="add" >Write a new todo item</label>
+            <input class="nested-todos__form-field" id="add" type="text" placeholder="E.g. Buy some books" required data-todo-form-input>
+          </div>
+          <button class="nested-todos__form-submit button" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="nested-todos__main">
+      <div class="nested-todos__container">
+        <ul class="nested-todos__list js-todo-list" data-todo-list></ul>
+        <div class="nested-todos__empty-state">Your todo list is empty. Hurray! 🥂</div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <div class="dialogs">
+    <div class="dialog-overlay" data-dialog-overlay data-dialog-close></div>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="subtask-dialog-title" id="subtask-dialog">
+      <button class="dialog__close" aria-label="Close" data-dialog-close>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><line x1="368" y1="368" x2="144" y2="144" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><line x1="368" y1="144" x2="144" y2="368" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+      </button>
+      <div class="dialog__main">
+        <h2 id="subtask-dialog-title" class="dialog__title">Add subtask</h2>
+
+        <form class="dialog__form" data-nested-todo-form>
+          <input class="dialog__field" name="nested-todo" type="text" aria-label="Add subtask" placeholder="E.g. Buy some books" required data-element-to-focus>
+
+          <div class="dialog__actions">
+            <button type="submit" class="dialog__action button">Add</button>
+            <button type="button" class="dialog__action button button--outline" data-dialog-close>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="edit-dialog-title" id="edit-dialog">
+      <button class="dialog__close" aria-label="Close" data-dialog-close>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><line x1="368" y1="368" x2="144" y2="144" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><line x1="368" y1="144" x2="144" y2="368" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+      </button>
+      <div class="dialog__main">
+        <h2 id="edit-dialog-title" class="dialog__title">Edit todo</h2>
+
+        <form class="dialog__form" data-edit-todo-form>
+          <input class="dialog__field" name="edit-todo" type="text" aria-label="Edit todo" required data-element-to-focus>
+
+          <div class="dialog__actions">
+            <button type="submit" class="dialog__action button">Save</button>
+            <button type="button" class="dialog__action button button--outline" data-dialog-close>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/helpers.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
