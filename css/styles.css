@@ -244,20 +244,11 @@ ol {
 .nested-todos__item-nested-todos {
   margin: 0;
   padding: 0 0 0 2em;
-  max-height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition:
-    max-height 0.3s ease-in-out,
-    visibility 0s ease-in-out 0.3s;
+  display: none;
 }
 
 .nested-todos__item--expanded > .nested-todos__item-nested-todos {
-  max-height: 100vh;
-  visibility: visible;
-  transition:
-    max-height 0.3s ease-in-out,
-    visibility 0s ease-in-out 0s;
+  display: block;
 }
 
 .nested-todos__actions {
