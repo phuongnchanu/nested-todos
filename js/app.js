@@ -1,5 +1,5 @@
 (function() {
-  var model = new window.app.Model('nested-todo');
-  var view = new window.app.View();
-  new window.app.Controller(model, view);
+  var model = new Model('nested-todo');
+  var view = new View();
+  new Controller(model, view);
 })();

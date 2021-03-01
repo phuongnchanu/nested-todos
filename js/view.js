@@ -246,6 +246,5 @@
     window.addEventListener('keyup', this.dialogKeyupHandler.bind(this));
   };
 
-  window.app = window.app || {};
-  window.app.View = View;
+  window.View = View;
 })();

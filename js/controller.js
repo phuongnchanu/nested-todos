@@ -43,6 +43,5 @@
     this.view.renderTodos(todos);
   };
 
-  window.app = window.app || {};
-  window.app.Controller = Controller;
+  window.Controller = Controller;
 })();
