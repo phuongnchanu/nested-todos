@@ -55,4 +55,14 @@
   window.removeTrapFocus = function() {
     document.removeEventListener('keydown', trapFocusHandler.keydown);
   };
+
+  window.forceFocus = function(elem) {
+    if (!elem) {
+      return;
+    }
+
+    requestAnimationFrame(function() {
+      elem.focus();
+    });
+  };
 })();
